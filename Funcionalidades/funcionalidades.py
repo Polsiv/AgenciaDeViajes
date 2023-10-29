@@ -3,9 +3,15 @@ import matplotlib.pyplot as plt
 
 #Dibujar el grafo por medio de la libreria matplotlib.pyplot
 def dibujarGrafo(grafo):
+    
+    #PASAR LAS ETIQUETAS DE OBJETOS A NOMBRES
+    nombrePais = {}
+    for nodo in grafo.nodes:
+        nombrePais[nodo] = nodo._nombre
+        
     #DIBUJAR GRAFO
     posUno = nx.spring_layout(grafo)   
-    nx.draw(grafo, posUno, with_labels=True, node_size=500, node_color="skyblue", font_size=10, font_color="black")
+    nx.draw(grafo, posUno, with_labels=True, labels = nombrePais, node_size=3000, node_color="skyblue", font_size=10, font_color="black", node_shape = "s")
     
     # Obtener las etiquetas de peso de las aristas
     edge_labels = {(u, v): d['costoViaje'] for u, v, d in grafo.edges(data=True)}

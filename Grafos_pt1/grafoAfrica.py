@@ -1,6 +1,9 @@
+import sys
+sys.path.append(r'C:\Users\ACER\Desktop\JD\Semestre_3\Estructura de datos\Semana 18 - Proyecto')
+from Clases import pais
 import networkx as nx
 import matplotlib.pyplot as plt
-import pais, funcionalidades
+from Funcionalidades import funcionalidades
 
 senegal = pais.Destino("Senegal", "Dakar", "Radisson Blu Hotel, Dakar Sea Plaza", 2, 490, ["Exploración de la Isla de Gorée", "Visita al Monumento del Renacimiento Africano", "Paseo por la playa de Dakar"])
 argelia = pais.Destino("Argelia", "Argel", "ibis Alger Aéroport", 3, 460, ["Visita a la Casbah de Argel", "Paseo por la Plaza de la Grande Poste", "Exploración del Jardín de Essai"])

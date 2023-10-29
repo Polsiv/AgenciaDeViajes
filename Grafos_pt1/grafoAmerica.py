@@ -1,6 +1,9 @@
+import sys
+sys.path.append(r'C:\Users\ACER\Desktop\JD\Semestre_3\Estructura de datos\Semana 18 - Proyecto')
+from Clases import pais
 import networkx as nx
 import matplotlib.pyplot as plt
-import pais, funcionalidades
+from Funcionalidades import funcionalidades
 
 # ------------------ instancias de la clase Destino del archivo pais ------------------
 colombia = pais.Destino("Colombia", "Bogotá D.C", "Hotel Ibis", 3, 390,   ["Visita al museo del oro", "Visita a monserrate", "Visita Plaza de Bolivar", "Museo Botero"])
@@ -64,14 +67,19 @@ def crearGrafosAmerica():
 
     grafoAmerica.add_edge(republicaDominicana, estadosUnidos, costoViaje = 210)
     grafoAmerica.add_edge(republicaDominicana, canada, costoViaje = 454)
-
+    
     grafoAmerica.add_edge(mexico, cuba, costoViaje = 310)
     grafoAmerica.add_edge(mexico, estadosUnidos, costoViaje = 360)
     grafoAmerica.add_edge(mexico, canada, costoViaje = 410)
 
     grafoAmerica.add_edge(estadosUnidos, canada, costoViaje = 240)
     
-    #Poner conexiones entre america del sur y del norte
+    grafoAmerica.add_edge(colombia, estadosUnidos, costoViaje = 350)
+    grafoAmerica.add_edge(colombia, panama, costoViaje = 193)
+    
+    grafoAmerica.add_edge(ecuador, elSalvador, costoViaje = 370)
+    
+    grafoAmerica.add_edge(argentina, estadosUnidos, costoViaje = 500)
     
     #------------------------------------------------------------------------------
     
