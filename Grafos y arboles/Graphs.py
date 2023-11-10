@@ -1,4 +1,5 @@
 from Colas import *
+from Pilas import *
 
 #clase nodo vertice
 class nodoArista(object):
@@ -265,3 +266,11 @@ def barrido_amplitud (grafo, vertice):
                     adyacentes = adyacentes.sig
         
         vertice = vertice.sig
+
+
+#ALGORITMOS===============================================
+
+#Algoritmo de Dijkstra para hallar el camino mas corto
+
+# def dijkstra(grafo, origen, destino):
+#     no_visitados = Heap(tamanio(grafo))
