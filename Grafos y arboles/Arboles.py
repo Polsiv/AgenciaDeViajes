@@ -6,8 +6,7 @@ class nodoArbol(object):
         self.izq = None
         self.der = None
         self.info = info
-        self.altura = 0
-
+    
 #elimina un elemento del arbol y lo devuelve si lo encuentra
 def eliminar_nodo(raiz, clave):
     x = None
@@ -112,65 +111,5 @@ def postorden(raiz):
         postorden(raiz.izq)
     
 
-#SIG SIG SIG PAGINA===============================================
 
-#devuelve la altura de un nodo
-def altura (raiz):
-    if (raiz is None):
-        return -1
-    else:
-        return raiz.altura
-    
-#actualiza la altura de un nodo    
-def actualizaraltura(raiz):
-    if (raiz is not None):
-        alt_izq = altura(raiz.izq)
-        alt_der = altura(raiz.der)
-        raiz.altura = (alt_izq if alt_izq > alt_der else alt_der) + 1
-
-#Realiza una rotacion simple de nodos a la derecha o a la izquierda
-def rotar_simple(raiz, control):
-    if control:
-        aux = raiz.iqz
-        raiz.izq = aux.der
-        aux.der = raiz
-    else:
-        aux = raiz.der
-        raiz.der = aux.izq
-        aux.izq = raiz
-    actualizaraltura(raiz)
-    actualizaraltura(aux)
-
-    raiz = aux
-    return raiz
-
-
-#Realiza una rotacion doble de nodos a la derecha o a la izquierdaWWWWAQ        WWWSWWWWQ   SASAAaAaSSSSSSSSSSSSS8732ECXDXSSSXSDCSSA
-def rotar_doble(raiz, control):
-    if control:
-        raiz.izq = rotar_simple(raiz.izq, False)
-        raiz = rotar_simple(raiz, True)
-    else:
-        raiz.der = rotar_simple(raiz.der, True)
-        raiz = rotar_simple(raiz, False)
-    return raiz
-
-#Determina que rotacion hay que hacer para balancear el arbol
-def balancear(raiz):
-
-    if(raiz is not None):
-        if(altura(raiz.izq) - altura(raiz.der) == 2):
-            if(altura(raiz.izq.izq) >= altura(raiz.izq.der)):
-                raiz = rotar_simple(raiz, True)
-            else:
-                raiz = rotar_doble(raiz, True)
-        elif(altura(raiz.der) - altura(raiz.izq) == 2):
-            if(altura(raiz.der.der) >= altura(raiz.der.izq)):
-                raiz = rotar_simple(raiz, False)
-            else:
-                raiz = rotar_doble(raiz, False)
-
-    return raiz
-
-#SIG SIG SIG SIG PAGINA===============================================
 
