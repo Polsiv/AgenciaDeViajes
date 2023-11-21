@@ -11,16 +11,16 @@ def login():
     if st.button("Login"):
         if email == "a" and password == "a":
             st.success("login valido")
-
             container = st.empty()
             container.text("ess")
+            #st.sidebar.success("test")
         else:
             st.error("usuario o contrasenia inc")
     
     return False
 
 
-st.sidebar.success("test")
+
 
 if __name__ == "__main__":
     login()
